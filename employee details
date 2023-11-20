@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+class employee{
+        public:
+                int ENo,DA,IT;
+                string E_name;
+                float salary,Net_sal;
+        public:
+                void read()
+                {
+                        cout<<"Enter details : "<<endl;
+                        cout<<"Employee No :"<<endl;
+                        cin>>ENo;
+                        cout<<"Employee Name:"<<endl;
+                        cin>>E_name;
+                        cout<<"Basic salary:"<<endl;
+                        cin>>salary;
+                }
+                void display()
+                {
+                        cout<<"Employee details"<<endl;
+                        cout<<"Employee No :"<<ENo<<endl;
+                        cout<<"Employee Name:"<<E_name<<endl;
+                        cout<<"Basic salary:"<<salary<<endl;
+                        cout<<"DA:"<<DA<<endl;
+                        cout<<"IT:"<<IT<<endl;
+                        cout<<"Net salary:"<<Net_sal<<endl;
+
+                }
+                void Sal()
+                {
+                        int gross;
+                        DA = 0.5 * salary;
+                        gross = DA + salary;
+                        IT = 0.3 * gross;
+                        Net_sal = salary + DA - IT;
+                        }
+                        };
+int main()
+{
+        int i,n;
+        cout<<"Enter n :";
+        cin>>n;
+        employee E[n];
+        for(i=0;i<n;i++)
+        {
+                E[i].read();
+                E[i].Sal();
+        }
+        for(i=0;i<n;i++)
+        {
+                E[i].display();
+        }
+        return 0;
+}
