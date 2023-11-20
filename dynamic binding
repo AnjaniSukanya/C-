@@ -1,0 +1,36 @@
+//Dynamic Binding Function overridding
+#include<iostream>
+using namespace std;
+class A
+{
+        public: int a,b;
+                void show()
+                {
+                        fun();
+                }
+                virtual void fun()
+                {
+
+                        cout<<"This is base class";
+                }
+
+};
+class B: public A
+{
+        public : void fun()
+                 {
+                         cout<<"enter a and b :";
+                         cin>>a>>b;
+                         int sum;
+                         sum = a + b;
+                         cout<<"Sum:"<<sum<<endl;
+                 }
+
+};
+int main()
+{
+        A *w;
+        w = new B();
+        w->fun();
+        return 0;
+}
