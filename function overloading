@@ -1,0 +1,32 @@
+//static binding Function overloading
+#include<iostream>
+using namespace std;
+class A
+{
+        public: void D_type(int x){
+                        cout<<"x:"<<x<<endl;
+                }
+                void D_type(char ch){
+                        cout<<"ch:"<<ch<<endl;
+                }
+                void D_type(float f){
+                        cout<<"f:"<<f<<endl;
+                }
+                void D_type(double d){
+                        cout<<"d:"<<d<<endl;
+                }
+                void D_type(string s){
+                        cout<<"s:"<<s<<endl;
+
+                }
+
+};
+int main(){
+        A a;
+        a.D_type(10);
+        a.D_type('A');
+        a.D_type(5.000000);
+        a.D_type(8467.890);
+        a.D_type("xyz123");
+        return 0;
+}
